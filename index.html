@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Faulty Calculator (10% Correct)</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      background: #1e293b;
+      font-family: Arial;
+      color: white;
+    }
+
+    .calc {
+      background: #0f172a;
+      padding: 20px;
+      border-radius: 10px;
+      width: 260px;
+    }
+
+    .display {
+      background: #0b1220;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      font-size: 20px;
+    }
+
+    .keys {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+
+    button {
+      padding: 12px;
+      border: none;
+      border-radius: 5px;
+      background: #334155;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button.equal { 
+    background: #0ea5a0; 
+    }
+    button.op { 
+    background: #0b59a3; 
+    }
+  </style>
+</head>
+<body>
+
+  <div class="calc">
+    <div class="display" id="display">0</div>
+
+    <div class="keys">
+      <button onclick="press('7')">7</button>
+      <button onclick="press('8')">8</button>
+      <button onclick="press('9')">9</button>
+      <button class="op" onclick="press('/')">÷</button>
+
+      <button onclick="press('4')">4</button>
+      <button onclick="press('5')">5</button>
+      <button onclick="press('6')">6</button>
+      <button class="op" onclick="press('*')">×</button>
+
+      <button onclick="press('1')">1</button>
+      <button onclick="press('2')">2</button>
+      <button onclick="press('3')">3</button>
+      <button class="op" onclick="press('-')">−</button>
+
+      <button onclick="press('0')">0</button>
+      <button onclick="press('.')">.</button>
+      <button class="equal" onclick="calculate()">=</button>
+      <button class="op" onclick="press('+')">+</button>
+
+      <button onclick="clearAll()">C</button>
+      <button onclick="backspace()">⌫</button>
+      <button onclick="press('%')">%</button>
+    </div>
+  </div>
+    <script src="index.js"></script>
+</body>
+</html>
