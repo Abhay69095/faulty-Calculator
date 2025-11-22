@@ -1,23 +1,44 @@
-
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="UTF-8">
   <title>Simple Faulty Calculator (10% Correct)</title>
   <style>
     body {
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
       margin: 0;
-      background: #1e293b;
       font-family: Arial;
       color: white;
     }
 
+    section {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+    }
+
+    video {
+      margin: 0%;
+      height: fit-content;
+      width: 100%;
+      object-fit: fill;
+    }
+
+    h1 {
+      color: yellow;
+      font-size: 80px;
+    }
+
     .calc {
-      background: #0f172a;
+      margin: 0 auto;
+      background: #ffffff;
       padding: 20px;
       border-radius: 10px;
       width: 260px;
@@ -44,51 +65,62 @@
       padding: 12px;
       border: none;
       border-radius: 5px;
-      background: #334155;
+      background: #fdc11e;
       color: white;
       font-size: 16px;
       cursor: pointer;
     }
 
-    button.equal { 
-    background: #0ea5a0; 
+    button.equal {
+      background: #0ea5a0;
     }
-    button.op { 
-    background: #0b59a3; 
+
+    button.op {
+      background: #0b59a3;
     }
   </style>
 </head>
+
 <body>
-
-  <div class="calc">
-    <div class="display" id="display">0</div>
-
-    <div class="keys">
-      <button onclick="press('7')">7</button>
-      <button onclick="press('8')">8</button>
-      <button onclick="press('9')">9</button>
-      <button class="op" onclick="press('/')">÷</button>
-
-      <button onclick="press('4')">4</button>
-      <button onclick="press('5')">5</button>
-      <button onclick="press('6')">6</button>
-      <button class="op" onclick="press('*')">×</button>
-
-      <button onclick="press('1')">1</button>
-      <button onclick="press('2')">2</button>
-      <button onclick="press('3')">3</button>
-      <button class="op" onclick="press('-')">−</button>
-
-      <button onclick="press('0')">0</button>
-      <button onclick="press('.')">.</button>
-      <button class="equal" onclick="calculate()">=</button>
-      <button class="op" onclick="press('+')">+</button>
-
-      <button onclick="clearAll()">C</button>
-      <button onclick="backspace()">⌫</button>
-      <button onclick="press('%')">%</button>
-    </div>
+  <div class="video-bg">
+    <video autoplay loop muted playsinline>
+      <source src="./4K_583.mp4" type="video/mp4">
+    </video>
   </div>
-    <script src="index.js"></script>
+  <section>
+    <h1>Faulty Calculator</h1>
+
+    <div class="calc">
+      <div class="display" id="display">0</div>
+
+      <div class="keys">
+        <button onclick="press('7')">7</button>
+        <button onclick="press('8')">8</button>
+        <button onclick="press('9')">9</button>
+        <button class="op" onclick="press('/')">÷</button>
+
+        <button onclick="press('4')">4</button>
+        <button onclick="press('5')">5</button>
+        <button onclick="press('6')">6</button>
+        <button class="op" onclick="press('*')">×</button>
+
+        <button onclick="press('1')">1</button>
+        <button onclick="press('2')">2</button>
+        <button onclick="press('3')">3</button>
+        <button class="op" onclick="press('-')">−</button>
+
+        <button onclick="press('0')">0</button>
+        <button onclick="press('.')">.</button>
+        <button class="equal" onclick="calculate()">=</button>
+        <button class="op" onclick="press('+')">+</button>
+
+        <button onclick="clearAll()">C</button>
+        <button onclick="backspace()">⌫</button>
+        <button onclick="press('%')">%</button>
+      </div>
+    </div>
+  </section>
+  <script src="index.js"></script>
 </body>
+
 </html>
